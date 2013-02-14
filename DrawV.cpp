@@ -35,5 +35,5 @@ Drawv::Drawv(Function func, Frame& frame, double epsilon)
     CtcCompo out(t2,t4);
 
     //Execute Sivia with the created constraints and draw the lines
-    Sivia(frame, epsilon, IntervalVector(2,Interval(-10,10)), in, out, QColor(Qt::blue), QColor(Qt::cyan),QColor(Qt::red), QColor(Qt::magenta), QColor(Qt::blue),  QColor(Qt::blue));
+    Sivia(frame, epsilon, IntervalVector(2,Interval(-10,10)), in, out, QColor(Qt::blue), QColor(Qt::cyan),QColor(Qt::red), QColor(Qt::magenta), QColor(Qt::yellow),  QColor(Qt::yellow));
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>StabIBEX</class>
+ <widget class="QMainWindow" name="StabIBEX">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string notr="true">StabIBEX</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QDoubleSpinBox" name="EpsilonSpinBox">
@@ -30,7 +30,7 @@
      <number>4</number>
     </property>
     <property name="minimum">
-     <double>0.010000000000000</double>
+     <double>0.100000000000000</double>
     </property>
     <property name="maximum">
      <double>1.000000000000000</double>
