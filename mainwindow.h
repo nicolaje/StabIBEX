@@ -45,7 +45,7 @@ private slots:
     void on_pushButtongradV_clicked();
     void on_DrawV_clicked();
     void on_DrawF_clicked();
-    void mousePressEvent(QMouseEvent *mouseEvent);
+    void on_DrawTraj_checked(QMouseEvent *mouseEvent);
 };
 
 

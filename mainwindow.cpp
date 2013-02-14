@@ -8,6 +8,7 @@
 #include "simu.h"
 #include "drawf.h"
 
+using namespace std;
 
 double epsilon;
 int vResAnc=0;
@@ -16,7 +17,6 @@ int in = 0;
 
 MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-
 }
 
 void MainWindow::Init() {
@@ -104,7 +104,7 @@ void MainWindow::on_DrawV_clicked()
 
 }
 
-void MainWindow::mousePressEvent(QMouseEvent *mouseEvent)
+void MainWindow::on_DrawTraj_checked(QMouseEvent *mouseEvent)
 {
 
     mouseEvent->accept(); //j'accepte l'evenement
@@ -115,7 +115,7 @@ void MainWindow::mousePressEvent(QMouseEvent *mouseEvent)
         if(ui->trajc->isChecked()){
             double xM = (double) (mouseEvent->x()-140)/(391/20) -10;
             double yM = (double) -(mouseEvent->y()-50)/(491/20) +10;
-            Simu simulation("f_inf.txt","f_sup.txt",*frame,xM,yM);
+            Simu("f_inf.txt","f_sup.txt",*frame,xM,yM);
         }
     }
 }
