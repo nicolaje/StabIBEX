@@ -15,11 +15,9 @@ public:
      *
      * Parameters:
      * frame:   where to draw the boxes.
+     * box: the box to contract/bissect
      * epsilon: precision downto which boxes are bisected.
      */
-    Sivia(Frame& frame, double epsilon, Ctc& Coutside, Ctc& Cinside, QColor PenOutside,
-          QColor BrushOutside, QColor PenInside, QColor BrushInside, QColor PenSmallEnough, QColor BrushSmallEnough ) ;
-
     Sivia(Frame& frame, double epsilon, IntervalVector box, Ctc& Coutside, Ctc& Cinside, QColor PenOutside,
                  QColor BrushOutside, QColor PenInside, QColor BrushInside, QColor PenSmallEnough, QColor BrushSmallEnough );
 

@@ -36,7 +36,6 @@ Drawf::Drawf(Frame& frame, double x1min, double x1max, double x2min, double x2ma
             frame.DrawArrow(x1,x2,f2[0].mid()/n2,f2[1].mid()/n2,0.1,pen1);
             frame.DrawArrow(x1,x2,f2[0].mid()/n3,f1[1].mid()/n3,0.1,pen1);
             frame.DrawArrow(x1,x2,f1[0].mid()/n4,f2[1].mid()/n4,0.1,pen1);
-
         }
     }
 
