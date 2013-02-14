@@ -100,7 +100,7 @@ void MainWindow::on_DrawV_clicked()
     Function v("V.txt");
 
     // run SIVIA
-    Drawv tmp(v, *frame, epsilon);
+    Drawv(v, *frame, epsilon);
 
 }
 
