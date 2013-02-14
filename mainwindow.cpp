@@ -41,12 +41,12 @@ void MainWindow::on_pushButtonV_clicked()
     QString s1 = ui->plainTextEditV->toPlainText();
 
     QFile file("V.txt");
-         if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-             return;
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return;
 
-         QTextStream out(&file);
-         out << s1 << "\n";
-         file.close();
+    QTextStream out(&file);
+    out << s1 << "\n";
+    file.close();
 }
 
 void MainWindow::on_pushButtonf_inf_clicked()
@@ -54,12 +54,12 @@ void MainWindow::on_pushButtonf_inf_clicked()
     QString s2 = ui->plainTextEditf_inf->toPlainText();
 
     QFile file("f_inf.txt");
-         if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-             return;
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return;
 
-         QTextStream out(&file);
-         out << s2 << "\n";
-         file.close();
+    QTextStream out(&file);
+    out << s2 << "\n";
+    file.close();
 }
 
 void MainWindow::on_pushButtonf_sup_clicked()
@@ -67,12 +67,12 @@ void MainWindow::on_pushButtonf_sup_clicked()
     QString s3 = ui->plainTextEditf_sup->toPlainText();
 
     QFile file("f_sup.txt");
-         if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-             return;
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return;
 
-         QTextStream out(&file);
-         out << s3 << "\n";
-         file.close();
+    QTextStream out(&file);
+    out << s3 << "\n";
+    file.close();
 }
 
 void MainWindow::on_pushButtongradV_clicked()
@@ -80,12 +80,12 @@ void MainWindow::on_pushButtongradV_clicked()
     QString s4 = ui->plainTextEditgradV->toPlainText();
 
     QFile file("gradV.txt");
-         if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-             return;
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return;
 
-         QTextStream out(&file);
-         out << s4 << "\n";
-         file.close();
+    QTextStream out(&file);
+    out << s4 << "\n";
+    file.close();
 
 }
 
@@ -100,8 +100,8 @@ void MainWindow::on_DrawV_clicked()
     Function v("V.txt");
 
     // run SIVIA
-    Drawv(v, *frame, epsilon);
-
+    Drawv(v, *frame,
+          ui->EpsilonSpinBox->value());
 }
 
 void MainWindow::on_DrawTraj_checked(QMouseEvent *mouseEvent)
@@ -113,8 +113,8 @@ void MainWindow::on_DrawTraj_checked(QMouseEvent *mouseEvent)
     else
     {
         if(ui->trajc->isChecked()){
-            double xM = (double) (mouseEvent->x()-140)/(391/20) -10;
-            double yM = (double) -(mouseEvent->y()-50)/(491/20) +10;
+            double xM = (double) (mouseEvent->x()-145)/(391/20) -10;
+            double yM = (double) -(mouseEvent->y()-65)/(491/20) +10;
             Simu("f_inf.txt","f_sup.txt",*frame,xM,yM);
         }
     }
@@ -144,7 +144,6 @@ void MainWindow::on_pushButtonSolve_clicked()
     on_pushButtonf_inf_clicked();
     on_pushButtonf_sup_clicked();
     on_pushButtongradV_clicked();
-
-    DrawSolve(*frame, epsilon, ui->vscrollbar->value());
+    DrawSolve(*frame, ui->EpsilonSpinBox->value(), ui->vscrollbar->value());
 
 }
