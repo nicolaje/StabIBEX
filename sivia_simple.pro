@@ -28,9 +28,14 @@ HEADERS += mainwindow.h \
 
 FORMS += mainwindow.ui
 
+win32 {
+ INCLUDEPATH += ../ibex-2.0/include/ibex ../soplex-1.7.0/src
+ LIBS += -L../ibex-2.0/bin -L../soplex-1.7.0/lib -libex_mingw_x86 -lsoplex_mingw_x86
+}
+else {
  CONFIG += link_pkgconfig
  PKGCONFIG += /home23/pinheima/IBEX_PACK_LINUX64/INSTALL/IBEX/share/pkgconfig/ibex.pc
-
+}
 
 OTHER_FILES += \
     myFunction.txt \
