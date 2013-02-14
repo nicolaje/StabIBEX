@@ -7,7 +7,7 @@ DrawSolve::DrawSolve(Frame& frame, double epsilon, int valueScrollBar)
     // Create the function we want to apply SIVIA on.
     Variable x1,x2,a1,a2;
 
-    double v_bar = (double)valueScrollBar;
+//    double v_bar = (double)valueScrollBar;
 
     Function V("V.txt");
     Function f_sup("f_sup.txt");
@@ -24,7 +24,7 @@ DrawSolve::DrawSolve(Frame& frame, double epsilon, int valueScrollBar)
     NumConstraint c32_cIn(x1,x2,a1,a2,a2-f_inf(x1,x2)[1]<0);
 
     NumConstraint c41_cIn(x1,x2,V(x1,x2)<0);
-    NumConstraint c42_cIn(x1,x2,V(x1,x2)>v_bar);
+    NumConstraint c42_cIn(x1,x2,V(x1,x2)>valueScrollBar);
 
     CtcFwdBwd c1_In(c1_cIn);
 
@@ -54,7 +54,7 @@ DrawSolve::DrawSolve(Frame& frame, double epsilon, int valueScrollBar)
     NumConstraint c32_c(x1,x2,a1,a2,a2-f_inf(x1,x2)[1]>=0);
 
     NumConstraint c41_c(x1,x2,V(x1,x2)>=0);
-    NumConstraint c42_c(x1,x2,V(x1,x2)<=v_bar);
+    NumConstraint c42_c(x1,x2,V(x1,x2)<=valueScrollBar);
 
     CtcFwdBwd c1(c1_c);
 

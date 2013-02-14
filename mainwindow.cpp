@@ -127,6 +127,9 @@ void MainWindow::on_DrawF_clicked()
         Init();
     }
 
+    on_pushButtonf_inf_clicked();
+    on_pushButtonf_sup_clicked();
+
     Drawf(*frame,xmin,xmax,ymin,ymax, ui->verticalSliderResolution->value());
 
     vResAnc =  ui->verticalSliderResolution->value();
